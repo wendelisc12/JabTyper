@@ -1,0 +1,71 @@
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+#player{
+    transition: all 400ms;
+}
+
+#player:hover{
+    border-bottom: 1px solid var(--primary)
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+#timer-box{
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 500px;
+}
+
+#timer-box li{
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+textarea{
+    resize: none;
+    margin-top: 20px;
+    outline-color: var(--primary);
+    transition: 400ms all;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+textarea:hover{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+#contadores-box{
+    margin: 20px 0;
+    font-size: 1.2em;
+    width: 400px;
+}
+
+#contadores-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.progress, div.progress-bar{
+    transition: 400ms all;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+button.btn{
+    transition: 400ms all;
+}
+
+button.btn:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JabTyper</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center">
+    <div id="title-box" class="border-bottom w-100 d-flex justify-content-center align-items-center">
+        <h1 class="display-3">Jab<span class="text-primary">Typer</span></h1>
+    </div>
+    <div id="principal-box" class=" w-75 d-flex flex-column align-items-center">
+
+        <div id="informations-box" class=" d-flex flex-column justify-content-center align-items-center m-3">
+            <div class="w-100 d-flex justify-content-center align-items-center input-group m-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#007bff" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                        </svg>
+                    </span>
+                </div>
+                <input type="text" placeholder="insira o nome do jogador" id="player" class="form-control">
+            </div>
+            <p class="frase text-center m-0">Primeira frase</p>
+            <div class="m-3">
+                <ul class="informacoes list-unstyled text-center d-flex align-items-center justify-content-around" id="timer-box">
+                    <li class="list-inline-item d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="var(--primary)" class="bi bi-file-word" viewBox="0 0 16 16">
+                            <path d="M4.879 4.515a.5.5 0 0 1 .606.364l1.036 4.144.997-3.655a.5.5 0 0 1 .964 0l.997 3.655 1.036-4.144a.5.5 0 0 1 .97.242l-1.5 6a.5.5 0 0 1-.967.01L8 7.402l-1.018 3.73a.5.5 0 0 1-.967-.01l-1.5-6a.5.5 0 0 1 .364-.606z"/>
+                            <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <span id="tamanho-frase" class="mx-1"></span> 
+                        palavras</li>
+                    <li class="list-inline-item d-flex align-items-center justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="var(--primary)" class="bi bi-stopwatch" viewBox="0 0 16 16">
+                            <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+                            <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+                        </svg>
+                        <span id="tempo" class="mx-1">15</span> 
+                        segundos</li>
+                </ul>
+            </div>
+            
+            <div class="progress w-100">
+                <div class="progress-bar " style="width:100%"></div>
+            </div>
+
+            <textarea id="campo-digitacao" cols="100" rows="10" class="p-2" placeholder="Clique aqui para iniciar"></textarea>
+        </div>
+
+        <div id="contadores-box">
+            <ul class="list-unstyled" id="contadores-list">
+                <li class="list-inline-item alert alert-secondary" style="cursor:default;"><span id="caracteres-digitados">0</span><span> caracteres</span></li>
+                <li class="list-inline-item alert alert-secondary mr-3" style="cursor:default;"><span id="palavras-digitadas">0</span><span> palavras</span></li>
+            </ul>
+        </div>
+
+        <div>
+            <button id="reset" class="btn btn-primary rounded-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="placar-box" class=" w-100 m-3">
+            <h2>Placar</h2>
+            <table id="tabela-resultado" class="table">
+                <thead class="thead-light">
+                    <th>Usuário</th>
+                    <th>N de palavras</th>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
